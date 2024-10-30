@@ -3,8 +3,9 @@
 
     <t t-name="awesome_owl.playground">
         <div class="m-2 p-3 border d-inline-block">
-            <Card title="cards[0].title" content="cards[0].content" />
-            <Card title="cards[1].title" content="cards[1].content" />
+            <Counter value="this.state.valueA" increment.bind="() => this.state.valueA++" />
+            <Counter value="this.state.valueB" increment.bind="() => this.state.valueB++" />
+            <div class="m-2 p-3 border d-block">The sum is: <t t-esc="this.state.valueA + this.state.valueB" /></div>
         </div>
     </t>
 </templates>
