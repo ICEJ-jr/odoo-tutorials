@@ -2,10 +2,8 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_owl.playground">
-        <div class="m-2 p-3 border d-inline-block">
-            <Counter value="this.state.valueA" increment.bind="() => this.state.valueA++" />
-            <Counter value="this.state.valueB" increment.bind="() => this.state.valueB++" />
-            <div class="m-2 p-3 border d-block">The sum is: <t t-esc="this.state.valueA + this.state.valueB" /></div>
+        <div class="m-2 p-2 border d-inline-block">
+            <TodoList />
         </div>
     </t>
 </templates>
