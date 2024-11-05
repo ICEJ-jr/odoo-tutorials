@@ -1,6 +1,6 @@
 /** @odoo-module **/
 
-import { Component, markup } from '@odoo/owl';
+import { Component, useState } from '@odoo/owl';
 
 export class Card extends Component {
   static template = 'awesome_owl.card';
@@ -13,5 +13,16 @@ export class Card extends Component {
         content: true
       }
     }
+  }
+
+  setup() {
+    this.state = useState({
+      isOpen: true
+    });
+  }
+  
+  toggleState() {
+    console.log('isOpen: ', this.state.isOpen);
+    this.state.isOpen= !this.state.isOpen;
   }
 }

@@ -2,13 +2,15 @@
 <templates xml:space="preserve">
     <t t-name="awesome_owl.card">
         <div class="card d-inline-block m-2" style="width: 18rem;">
-            <div class="card-header">
+            <div class="card-header d-flex justify-content-between">
                 <h5 class="card-title" ><t t-esc="props.title" /></h5>
-                <!-- <t t-slot="title"/> -->
+                <span class="btn btn-sm btn-secondary" t-on-click="toggleState">toggle</span>
             </div>
-            <div class="card-body">
-                <t t-slot="content">default content</t>
-            </div>
+            <t t-if="this.state.isOpen">
+                <div class="card-body">
+                    <t t-slot="content">default content</t>
+                </div>
+            </t>
         </div>
    </t>
 </templates>
