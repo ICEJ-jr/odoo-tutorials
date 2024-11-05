@@ -2,8 +2,17 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_owl.playground">
-        <div class="m-2 p-2 border d-inline-block">
-            <TodoList />
+        <div class="m-2 p-2 border flex">
+            <Card title="'Card 1'">
+                <t t-set-slot="content" >
+                    <p>Content of card 1</p>
+                </t>
+            </Card> 
+            <Card title="'Card 1'">
+                <t t-set-slot="content" >
+                    <Counter value="this.state.counterValue" increment.bind="increment" />
+                </t>
+            </Card> 
         </div>
     </t>
 </templates>
