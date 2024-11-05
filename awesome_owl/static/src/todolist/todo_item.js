@@ -13,7 +13,9 @@ export class TodoItem extends Component {
         id: Number,
         description: String,
         isCompleted: Boolean
-      }
-    }
-  }
+      },
+    },
+    toggleState: Function,
+
+  };
 }

@@ -17,16 +17,23 @@ export class TodoList extends Component {
   static components = { TodoItem };
 
   addTodo(ev) {
-     const input = document.getElementById('todo-input');
-     const task = input.value.trim();
+    const input = document.getElementById('todo-input');
+    const task = input.value.trim();
 
-     if (task && ev.keyCode === 13) {
+    if (task && ev.keyCode === 13) {
       this.state.todos.push({
         id: this.state.todos.length + 1,
         description: task,
         isCompleted: false,
       });
       input.value = ''; // Clear input field
-     }
+    }
   }
+
+  toggleState(ev) {
+    const elem = ev.target
+    const todo = this.state.todos[elem.id - 1]
+    todo.isCompleted = !todo.isCompleted;
+    // console.log('toggleState', todo);
+  };
 }
