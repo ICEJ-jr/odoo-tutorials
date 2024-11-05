@@ -2,8 +2,9 @@
 <templates xml:space="preserve">
     <t t-name="awesome_owl.todo_item">
         <div class="d-flex align-items-center" t-att-class="{'text-muted text-decoration-line-through': props.todo.isCompleted }">
-            <input class="mt-1 me-1" type="checkbox" t-on-click="props.toggleState" t-att-id="props.todo.id" />
+            <input class="mt-1 me-1" type="checkbox" t-on-click="props.toggleState" t-att-data-id="props.todo.id" />
             <p class="mb-0"><span><t t-esc="props.todo.id"/></span>: <t t-esc="props.todo.description"/></p>
+            <span class="fa fa-remove pt-1 ms-auto text-danger" t-on-click="props.removeTodo" t-att-data-id="props.todo.id"/>
         </div>
    </t>
 </templates>

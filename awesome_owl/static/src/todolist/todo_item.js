@@ -12,10 +12,10 @@ export class TodoItem extends Component {
       shape: {
         id: Number,
         description: String,
-        isCompleted: Boolean
+        isCompleted: Boolean,
       },
     },
     toggleState: Function,
-
+    removeTodo: Function,
   };
 }
